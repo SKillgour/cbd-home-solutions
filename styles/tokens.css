@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #1d3a28;
+  --color-accent: #e06b1a;
+  --color-accent-hover: #c25a10;
+  --color-bg: #f7f8f5;
+  --color-surface: #eaf0e8;
+  --color-dark-surface: #1d3a28;
+  --color-text: #1d3a28;
+  --color-text-muted: #5a7060;
+  --color-text-on-dark: #f0f5ee;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-heading-weight: 800;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --transition: 0.25s ease;
+  --container: 1200px;
+}
