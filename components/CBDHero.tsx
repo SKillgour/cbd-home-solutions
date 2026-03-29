@@ -97,7 +97,7 @@ export default function CBDHero() {
       {/* Background Image */}
       <div className="cbd-hero-bg">
         <Image
-          src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&w=1920&q=80"
           alt="Painter on ladder working on exterior house repaint"
           fill
           priority

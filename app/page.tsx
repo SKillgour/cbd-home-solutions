@@ -32,8 +32,8 @@ const services = [
     id: "handyman",
     label: "Handyman Services",
     desc: "Those odd jobs that need doing. No job too small",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80",
-    imgAlt: "Handyman at work on a household repair job",
+    img: "https://images.unsplash.com/photo-1768839725085-829e6ac7ac26?auto=format&fit=crop&w=700&q=80",
+    imgAlt: "Tradesperson applying plaster with trowel on a wall repair job",
     size: "small",
   },
 ];
@@ -249,7 +249,6 @@ export default function HomePage() {
                       >
                         0
                       </span>
-                      {item.suffix}
                     </>
                   )}
                 </div>
