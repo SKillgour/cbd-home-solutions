@@ -12,8 +12,8 @@ const services = [
     description:
       "CBD Painters has been doing this work across Manawatu for years. We know that a good paint job lives and dies on the prep. We take the time to do it properly - filling, sanding, priming - so the finish looks great and stays that way.",
     image:
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=960&q=80",
-    imageAlt: "Painter rolling paint on a freshly prepped interior wall",
+      "https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=960&q=80",
+    imageAlt: "Painter in red overalls rolling a fresh coat of paint on an interior wall",
     includes: [
       "Interior repaints - living areas, bedrooms, kitchens, bathrooms",
       "Exterior repaints - weatherboards, fascia, window trims",

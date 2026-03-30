@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowRight, RotateCcw, Paintbrush, Thermometer, Wrench, ClipboardList } from "lucide-react";
 
 type Problem = {
   id: string;
   label: string;
-  emoji: string;
+  icon: React.ReactNode;
 };
 
 type ServiceResult = {
@@ -20,22 +20,22 @@ const PROBLEMS: Problem[] = [
   {
     id: "repaint",
     label: "My house needs a repaint",
-    emoji: "🎨",
+    icon: <Paintbrush size={20} />,
   },
   {
     id: "cold",
     label: "It's too cold in winter",
-    emoji: "🥶",
+    icon: <Thermometer size={20} />,
   },
   {
     id: "repairs",
     label: "Something needs fixing",
-    emoji: "🔧",
+    icon: <Wrench size={20} />,
   },
   {
     id: "odd-jobs",
     label: "Just a few odd jobs",
-    emoji: "📋",
+    icon: <ClipboardList size={20} />,
   },
 ];
 
@@ -59,14 +59,14 @@ const RESULTS: Record<string, ServiceResult> = {
     description:
       "General repairs, fixes and upkeep for homes and commercial properties. We handle the stuff that gets put off.",
     detail:
-      "Rotting weatherboards, leaky spouting, worn cladding - if it needs fixing, we can tackle it. CBD Home Solutions is the one call for general property maintenance in Manawatu.",
+      "Rotting weatherboards, leaky spouting, worn cladding — if it needs fixing, we can tackle it. CBD Home Solutions is the one call for general property maintenance in Manawatu.",
   },
   "odd-jobs": {
     name: "Handyman Services",
     description:
       "No job too small. We take care of those odd jobs that just need doing.",
     detail:
-      "From hanging doors to patching walls, assembling flat-pack furniture to fixing that dripping tap - if it's a small job that needs a capable person, call us.",
+      "From hanging doors to patching walls, assembling flat-pack furniture to fixing that dripping tap — if it's a small job that needs a capable person, call us.",
   },
 };
 
@@ -83,8 +83,8 @@ export default function ServiceFinder() {
           Not Sure What You Need?
         </p>
         <h3
-          className="text-white text-2xl font-extrabold"
-          style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+          className="text-white text-2xl font-bold"
+          style={{ fontFamily: "var(--font-heading)" }}
         >
           Tell us the problem
         </h3>
@@ -95,10 +95,9 @@ export default function ServiceFinder() {
 
       <div className="p-8">
         {!result ? (
-          /* Step 1: Pick a problem */
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-4">
-              Step 1 of 2 - What best describes your situation?
+              Step 1 of 2 — What best describes your situation?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {PROBLEMS.map((p) => (
@@ -107,7 +106,9 @@ export default function ServiceFinder() {
                   className="finder-option"
                   onClick={() => setSelected(p.id)}
                 >
-                  <span className="text-2xl mb-2 block">{p.emoji}</span>
+                  <span className="text-[var(--color-accent)] mb-2 block">
+                    {p.icon}
+                  </span>
                   <span
                     className="font-semibold text-[var(--color-text)] text-sm"
                     style={{ fontFamily: "var(--font-body)" }}
@@ -119,17 +120,16 @@ export default function ServiceFinder() {
             </div>
           </div>
         ) : (
-          /* Step 2: Result */
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-4">
-              Step 2 of 2 - Here&apos;s what you need
+              Step 2 of 2 — Here&apos;s what you need
             </p>
 
             <div className="bg-[var(--color-surface)] rounded-xl p-6 mb-6">
               <div className="cbd-divider" />
               <h4
-                className="text-[var(--color-primary)] text-xl font-extrabold mb-2"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+                className="text-[var(--color-primary)] text-xl font-bold mb-2"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 {result.name}
               </h4>
