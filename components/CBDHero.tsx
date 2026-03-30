@@ -37,49 +37,50 @@ export default function CBDHero() {
             .join(" ");
 
           const inners = heading.querySelectorAll(".hero-word-inner");
-          gsap.set(inners, { yPercent: 110 });
+          gsap.set(inners, { yPercent: 60, opacity: 0 });
           gsap.to(inners, {
             yPercent: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            stagger: 0.08,
-            delay: 0.2,
+            opacity: 1,
+            duration: 1.1,
+            ease: "power2.out",
+            stagger: 0.15,
+            delay: 0.3,
           });
         }
 
-        // Sub text fade up
+        // Sub text gentle drift
         if (subRef.current) {
-          gsap.set(subRef.current, { opacity: 0, y: 20 });
+          gsap.set(subRef.current, { opacity: 0, y: 16 });
           gsap.to(subRef.current, {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            delay: 0.85,
+            duration: 1.0,
+            ease: "power1.out",
+            delay: 1.1,
           });
         }
 
-        // CTAs fade up
+        // CTAs drift up
         if (ctaRef.current) {
-          gsap.set(ctaRef.current, { opacity: 0, y: 20 });
+          gsap.set(ctaRef.current, { opacity: 0, y: 16 });
           gsap.to(ctaRef.current, {
             opacity: 1,
             y: 0,
-            duration: 0.7,
-            ease: "power2.out",
-            delay: 1.05,
+            duration: 0.9,
+            ease: "power1.out",
+            delay: 1.3,
           });
         }
 
         // Badge
         if (badgeRef.current) {
-          gsap.set(badgeRef.current, { opacity: 0, y: 12 });
+          gsap.set(badgeRef.current, { opacity: 0, y: 10 });
           gsap.to(badgeRef.current, {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-            delay: 1.25,
+            duration: 0.8,
+            ease: "power1.out",
+            delay: 1.5,
           });
         }
       });

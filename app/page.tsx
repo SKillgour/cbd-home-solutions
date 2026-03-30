@@ -1,64 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Star, MapPin, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, Phone } from "lucide-react";
 import CBDHero from "@/components/CBDHero";
 
 const services = [
   {
     id: "painting",
-    label: "Painting Services",
-    desc: "Interior and exterior repaints, new builds, feature walls",
-    img: "https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=900&q=80",
-    imgAlt: "Painter in red overalls rolling paint on interior wall",
-    size: "large",
+    number: "01",
+    label: "Painting",
+    desc: "Interior and exterior repaints, new builds, and feature walls done properly — prep, prime, finish.",
+    img: "https://images.unsplash.com/photo-1689200547919-ee170e6f9b72?auto=format&fit=crop&w=600&q=80",
+    imgAlt: "Painter carefully cutting in on a freshly painted wall",
   },
   {
     id: "insulation",
-    label: "Insulation Services",
-    desc: "Ceiling, underfloor, wall insulation for warmer homes",
-    img: "https://images.unsplash.com/photo-1753363562638-398f75158ea9?auto=format&fit=crop&w=900&q=80",
-    imgAlt: "Reflective foil insulation installed in residential attic space",
-    size: "large",
+    number: "02",
+    label: "Insulation",
+    desc: "Ceiling, underfloor and wall insulation to keep your home warmer in winter and cooler in summer.",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    imgAlt: "Insulation installation in a ceiling cavity",
   },
   {
     id: "maintenance",
+    number: "03",
     label: "Property Maintenance",
-    desc: "General repairs, fixes, and upkeep for homes and businesses",
-    img: "https://images.unsplash.com/photo-1742900280864-bcc27353ceba?auto=format&fit=crop&w=700&q=80",
-    imgAlt: "Painter on ladder working on exterior house maintenance",
-    size: "small",
+    desc: "Weatherboard repairs, spouting, decks, fences — the jobs that get put off but need doing.",
+    img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+    imgAlt: "Tradesperson working on exterior home repairs",
   },
   {
     id: "handyman",
-    label: "Handyman Services",
-    desc: "Those odd jobs that need doing. No job too small",
-    img: "https://images.unsplash.com/photo-1768839725085-829e6ac7ac26?auto=format&fit=crop&w=700&q=80",
-    imgAlt: "Tradesperson applying plaster with trowel on a wall repair job",
-    size: "small",
+    number: "04",
+    label: "Handyman",
+    desc: "That list sitting on the fridge? We'll work through it. No job too small, no list too long.",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
+    imgAlt: "Handyman completing a household repair job",
   },
 ];
 
-const testimonials = [
+const galleryImages = [
   {
-    quote:
-      "Amazing painters, they do a great job at a great price. Really easy company to work with! Would recommend.",
-    name: "Melissa Larsen",
-    detail: "Palmerston North",
-    stars: 5,
+    src: "https://images.unsplash.com/photo-1588964895597-cfec070f2f74?auto=format&fit=crop&w=800&q=80",
+    alt: "Freshly painted bright interior room",
   },
   {
-    quote:
-      "Had CBD come out to repaint our weatherboards and sort some maintenance. The team were on time, tidy and the result looks better than when the house was new. Very happy.",
-    name: "Grant Hooper",
-    detail: "Feilding",
-    stars: 5,
+    src: "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&w=800&q=80",
+    alt: "Painter on ladder working on exterior house repaint",
   },
   {
-    quote:
-      "Quick to respond, fair pricing, and the finished job was spot on. They did our ceiling insulation and a bunch of small repairs. Would definitely use again.",
-    name: "Rachel T.",
-    detail: "Levin",
-    stars: 5,
+    src: "https://images.unsplash.com/photo-1689200547919-ee170e6f9b72?auto=format&fit=crop&w=800&q=80",
+    alt: "Detail finish on interior wall paint",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=800&q=80",
+    alt: "Painter in red overalls applying paint to a wall",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    alt: "Insulation being installed in ceiling cavity",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+    alt: "Exterior maintenance work on a Manawatu home",
   },
 ];
 
@@ -67,125 +70,143 @@ export default function HomePage() {
     <>
       <CBDHero />
 
-      {/* === WHAT WE DO === */}
+      {/* === STORY BLOCK === */}
       <section className="py-24 bg-[var(--color-bg)]">
         <div className="container">
-          <div className="mb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+            {/* Image left */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl shadow-black/10">
+                <Image
+                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=960&q=80"
+                  alt="CBD painter rolling a fresh coat of paint on an interior wall"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-5 -right-4 bg-[var(--color-accent)] text-white rounded-xl px-5 py-4 shadow-lg hidden md:block">
+                <p className="text-xs font-semibold uppercase tracking-widest opacity-80">
+                  Based in
+                </p>
+                <p
+                  className="text-lg font-bold leading-tight mt-0.5"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  Manawatu, NZ
+                </p>
+              </div>
+            </div>
+
+            {/* Text right */}
+            <div>
+              <span className="section-label">Who We Are</span>
+              <h2
+                className="text-[var(--color-text)] mt-2 mb-6"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 700,
+                  fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.15,
+                }}
+              >
+                A Manawatu team you can actually count on.
+              </h2>
+              <p className="text-[var(--color-text-muted)] leading-relaxed mb-5">
+                CBD Home Solutions started as CBD Painters and grew because
+                people kept asking for more. Painting, yes — but also
+                insulation, maintenance and those odd jobs that pile up.
+              </p>
+              <p className="text-[var(--color-text-muted)] leading-relaxed mb-8">
+                We&apos;re a local, family-run team. We turn up when we say we
+                will, do the work properly, and leave your home tidy. That&apos;s
+                genuinely it.
+              </p>
+              <ul className="flex flex-col gap-3 mb-10">
+                {[
+                  "Free, no-obligation quotes — always",
+                  "Residential and commercial work across Manawatu",
+                  "Multi-trade team: one call covers it all",
+                  "Tidy, respectful tradespeople on every job",
+                ].map((point) => (
+                  <li key={point} className="flex items-center gap-3">
+                    <CheckCircle2
+                      size={17}
+                      className="text-[var(--color-accent)] shrink-0"
+                    />
+                    <span className="text-[var(--color-text-muted)] text-sm">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact" className="cbd-btn-primary">
+                Get a Free Quote
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === SERVICES — 4 SOFT CARDS === */}
+      <section className="py-24 bg-[var(--color-surface)]">
+        <div className="container">
+          <div className="mb-12">
             <span className="section-label">What We Do</span>
             <h2
-              className="text-[var(--color-text)] mt-1"
+              className="text-[var(--color-text)] mt-2"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                lineHeight: 1.1,
+                fontWeight: 700,
+                fontSize: "clamp(1.9rem, 3.5vw, 2.75rem)",
+                lineHeight: 1.15,
               }}
             >
-              One team. Four core services.
+              Four services. One team. One call.
             </h2>
-            <p className="text-[var(--color-text-muted)] mt-3 text-base max-w-xl">
-              From a fresh coat of paint to a full winter-ready home, CBD Home Solutions
-              covers it all across Manawatu.
-            </p>
           </div>
 
-          {/* Editorial layout: offset asymmetric grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-            {/* Large card 1 - spans 7 cols */}
-            <div className="md:col-span-7">
-              <div className="relative rounded-xl overflow-hidden h-[360px] md:h-[480px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg">
-                <Image
-                  src={services[0].img}
-                  alt={services[0].imgAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 58vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.93)] via-[rgba(32,44,56,0.35)] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-2">
-                    01
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((svc) => (
+              <Link
+                key={svc.id}
+                href={`/services#${svc.id}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-surface)] hover:border-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-black/8 flex flex-col"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={svc.img}
+                    alt={svc.imgAlt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                    {svc.number}
                   </span>
                   <h3
-                    className="text-white text-2xl font-extrabold mb-2"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+                    className="text-[var(--color-text)] font-bold text-lg mb-2 leading-snug"
+                    style={{ fontFamily: "var(--font-heading)" }}
                   >
-                    {services[0].label}
+                    {svc.label}
                   </h3>
-                  <p className="text-white/75 text-sm leading-relaxed mb-4">
-                    {services[0].desc}
+                  <p className="text-[var(--color-text-muted)] text-sm leading-relaxed flex-1">
+                    {svc.desc}
                   </p>
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-white font-semibold text-sm transition-colors"
-                  >
-                    See details <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Right column: large + two small stacked */}
-            <div className="md:col-span-5 flex flex-col gap-5">
-              {/* Large card 2 */}
-              <div className="relative rounded-xl overflow-hidden h-[240px] md:h-[280px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg">
-                <Image
-                  src={services[1].img}
-                  alt={services[1].imgAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.93)] via-[rgba(32,44,56,0.3)] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1.5">
-                    02
-                  </span>
-                  <h3
-                    className="text-white text-xl font-extrabold mb-1"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
-                  >
-                    {services[1].label}
-                  </h3>
-                  <p className="text-white/70 text-xs leading-relaxed">
-                    {services[1].desc}
-                  </p>
-                </div>
-              </div>
-
-              {/* Two small cards side by side */}
-              <div className="grid grid-cols-2 gap-5">
-                {services.slice(2).map((svc, i) => (
-                  <div
-                    key={svc.id}
-                    className="relative rounded-xl overflow-hidden h-[180px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg"
-                  >
-                    <Image
-                      src={svc.img}
-                      alt={svc.imgAlt}
-                      fill
-                      sizes="21vw"
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  <div className="mt-4 flex items-center gap-1.5 text-[var(--color-accent)] font-semibold text-sm">
+                    Learn more
+                    <ArrowRight
+                      size={13}
+                      className="transition-transform duration-200 group-hover:translate-x-1"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.95)] via-[rgba(32,44,56,0.5)] to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1">
-                        0{i + 3}
-                      </span>
-                      <h3
-                        className="text-white text-sm font-extrabold leading-tight mb-1"
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
-                      >
-                        {svc.label}
-                      </h3>
-                      <p className="text-white/60 text-xs leading-snug hidden sm:block">
-                        {svc.desc}
-                      </p>
-                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div className="mt-10">
@@ -197,152 +218,115 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === WHY CHOOSE CBD === */}
-      <section className="py-24 bg-[var(--color-primary)]">
-        <div className="container">
-          {/* Stats row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 mb-20">
-            {[
-              {
-                stat: "100",
-                suffix: "%",
-                label: "Manawatu-Based",
-                sub: "Local team, local knowledge",
-              },
-              {
-                stat: "2",
-                suffix: " sectors",
-                label: "Residential + Commercial",
-                sub: "Homes and businesses welcome",
-              },
-              {
-                stat: "Free",
-                suffix: "",
-                label: "Free Quotes Always",
-                sub: "No obligation, ever",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className={[
-                  "text-center py-10 px-6",
-                  i < 2
-                    ? "border-b sm:border-b-0 sm:border-r border-white/10"
-                    : "",
-                ].join(" ")}
-              >
-                <div className="stat-number mb-2">
-                  {item.stat}
-                  {item.suffix && (
-                    <span className="text-2xl">{item.suffix}</span>
-                  )}
-                </div>
-                <p
-                  className="text-[var(--color-text-on-dark)] font-bold text-lg mb-1"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                >
-                  {item.label}
-                </p>
-                <p className="text-white/50 text-sm">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Why points */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <span className="section-label-light">Why Choose Us</span>
-              <h2
-                className="text-[var(--color-text-on-dark)] mt-2 mb-6"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
-                  lineHeight: 1.1,
-                }}
-              >
-                We show up, do the job right, and make it simple.
-              </h2>
-              <p className="text-white/65 leading-relaxed mb-8">
-                CBD Home Solutions is a Manawatu-based team that takes pride in
-                clean work, clear communication and leaving your property better
-                than we found it. No surprises on the invoice.
-              </p>
-              <ul className="flex flex-col gap-4">
-                {[
-                  "Locally owned and operated in Manawatu",
-                  "Multi-trade team - one call gets it all sorted",
-                  "Free, no-obligation quotes every time",
-                  "Residential and commercial work welcome",
-                  "Tidy, respectful tradespeople on every job",
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3">
-                    <CheckCircle2
-                      size={18}
-                      className="text-[var(--color-accent)] mt-0.5 shrink-0"
-                    />
-                    <span className="text-white/80 text-sm">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Testimonials */}
-            <div className="flex flex-col gap-5">
-              {testimonials.map((t) => (
-                <div key={t.name} className="testimonial-card">
-                  <div className="flex gap-1 mb-3">
-                    {Array.from({ length: t.stars }).map((_, i) => (
-                      <Star
-                        key={i}
-                        size={14}
-                        className="text-[var(--color-accent)] fill-[var(--color-accent)]"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-white/85 text-sm leading-relaxed mb-4 italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-xs font-bold">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-sm">
-                        {t.name}
-                      </p>
-                      <p className="text-white/40 text-xs flex items-center gap-1">
-                        <MapPin size={10} />
-                        {t.detail}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+      {/* === QUOTE STRIP — grain texture signature element === */}
+      <section className="cbd-quote-strip py-24">
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <svg
+              className="mx-auto mb-6 text-[var(--color-accent)] opacity-60"
+              width="40"
+              height="30"
+              viewBox="0 0 40 30"
+              fill="currentColor"
+            >
+              <path d="M0 30V18C0 7.333 5.333 1.667 16 0l2 4C12.667 5.333 10 8.667 10 14h6v16H0zm22 0V18C22 7.333 27.333 1.667 38 0l2 4C34.667 5.333 32 8.667 32 14h8v16H22z" />
+            </svg>
+            <blockquote
+              className="text-[var(--color-text-on-dark)] italic leading-relaxed mb-8"
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontWeight: 400,
+                fontSize: "clamp(1.3rem, 2.5vw, 1.85rem)",
+                lineHeight: 1.5,
+              }}
+            >
+              The result looks better than when the house was new. The team were
+              on time, tidy, and I couldn&apos;t be happier with the job.
+            </blockquote>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={15}
+                  className="text-[var(--color-accent)] fill-[var(--color-accent)]"
+                />
               ))}
             </div>
+            <p
+              className="text-[var(--color-text-on-dark)] font-semibold text-sm"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Grant Hooper
+            </p>
+            <p className="text-white/40 text-xs mt-0.5">Feilding, Manawatu</p>
           </div>
         </div>
       </section>
 
-      {/* === CTA BAND === */}
+      {/* === OUR WORK GALLERY === */}
+      <section className="py-24 bg-[var(--color-bg)]">
+        <div className="container">
+          <div className="mb-12">
+            <span className="section-label">Our Work</span>
+            <h2
+              className="text-[var(--color-text)] mt-2"
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontWeight: 700,
+                fontSize: "clamp(1.9rem, 3.5vw, 2.75rem)",
+                lineHeight: 1.15,
+              }}
+            >
+              Finished jobs, across Manawatu.
+            </h2>
+            <p className="text-[var(--color-text-muted)] mt-3 text-sm max-w-lg">
+              Every job is someone&apos;s home. We treat it that way.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className={[
+                  "relative rounded-xl overflow-hidden group",
+                  i === 0 ? "aspect-[4/3]" : "aspect-square",
+                ].join(" ")}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === CTA === */}
       <section className="cbd-cta-band py-20">
         <div className="container text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-white/60 mb-4">
-            Ready to Get Started?
+            Ready to get sorted?
           </span>
           <h2
             className="text-white mb-4"
             style={{
               fontFamily: "var(--font-heading)",
-              fontWeight: 800,
+              fontWeight: 700,
               fontSize: "clamp(2rem, 4vw, 3.25rem)",
-              lineHeight: 1.05,
+              lineHeight: 1.1,
             }}
           >
             We&apos;ll come to you.
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            We&apos;ll assess the job and give you a clear quote. No surprises, no pressure.
+            Free quotes, Mon–Sat. No pressure, no obligation — just a straight
+            answer on what the job will cost.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -361,7 +345,7 @@ export default function HomePage() {
             </a>
           </div>
           <p className="text-white/50 text-sm mt-6">
-            Mon-Sat 9am-5pm. Manawatu and surrounding areas.
+            Mon–Sat 9am–5pm &nbsp;·&nbsp; Manawatu and surrounding areas
           </p>
         </div>
       </section>
