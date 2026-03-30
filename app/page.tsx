@@ -9,8 +9,8 @@ const services = [
     number: "01",
     label: "Painting",
     desc: "Interior and exterior repaints, new builds, and feature walls done properly — prep, prime, finish.",
-    img: "https://images.unsplash.com/photo-1689200547919-ee170e6f9b72?auto=format&fit=crop&w=600&q=80",
-    imgAlt: "Painter carefully cutting in on a freshly painted wall",
+    img: "https://images.unsplash.com/photo-1742900280864-bcc27353ceba?auto=format&fit=crop&w=600&q=80",
+    imgAlt: "Painter on ladder working on exterior house painting",
   },
   {
     id: "insulation",
@@ -40,20 +40,16 @@ const services = [
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1588964895597-cfec070f2f74?auto=format&fit=crop&w=800&q=80",
-    alt: "Freshly painted bright interior room",
+    src: "https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=800&q=80",
+    alt: "Painter in red overalls rolling paint on interior wall",
   },
   {
     src: "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&w=800&q=80",
     alt: "Painter on ladder working on exterior house repaint",
   },
   {
-    src: "https://images.unsplash.com/photo-1689200547919-ee170e6f9b72?auto=format&fit=crop&w=800&q=80",
-    alt: "Detail finish on interior wall paint",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=800&q=80",
-    alt: "Painter in red overalls applying paint to a wall",
+    src: "https://images.unsplash.com/photo-1768839725085-829e6ac7ac26?auto=format&fit=crop&w=800&q=80",
+    alt: "Tradesperson applying plaster on a wall repair job",
   },
   {
     src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
@@ -62,6 +58,10 @@ const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
     alt: "Exterior maintenance work on a Manawatu home",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    alt: "Handyman completing a professional home repair",
   },
 ];
 
@@ -78,8 +78,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl shadow-black/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=960&q=80"
-                  alt="CBD painter rolling a fresh coat of paint on an interior wall"
+                  src="https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=960&q=80"
+                  alt="CBD painter in red overalls rolling a fresh coat of paint on an interior wall"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
