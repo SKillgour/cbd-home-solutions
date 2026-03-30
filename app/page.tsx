@@ -70,7 +70,7 @@ export default function HomePage() {
       {/* === WHAT WE DO === */}
       <section className="py-24 bg-[var(--color-bg)]">
         <div className="container">
-          <div className="mb-14 cbd-reveal">
+          <div className="mb-14">
             <span className="section-label">What We Do</span>
             <h2
               className="text-[var(--color-text)] mt-1"
@@ -90,70 +90,66 @@ export default function HomePage() {
           </div>
 
           {/* Editorial layout: offset asymmetric grid */}
-          <div className="cbd-stagger-group grid grid-cols-1 md:grid-cols-12 gap-5">
-            {/* Large card 1 - spans 7 cols, tall */}
-            <div className="cbd-stagger-item md:col-span-7">
-              <div className="cbd-service-card h-full min-h-[360px] md:min-h-[480px] relative group">
-                <div className="relative w-full h-full min-h-[360px] md:min-h-[480px]">
-                  <Image
-                    src={services[0].img}
-                    alt={services[0].imgAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(29,58,40,0.92)] via-[rgba(29,58,40,0.35)] to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-7">
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-2">
-                      01
-                    </span>
-                    <h3
-                      className="text-white text-2xl font-extrabold mb-2"
-                      style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
-                    >
-                      {services[0].label}
-                    </h3>
-                    <p className="text-white/75 text-sm leading-relaxed mb-4">
-                      {services[0].desc}
-                    </p>
-                    <Link
-                      href="/services"
-                      className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-white font-semibold text-sm transition-colors"
-                    >
-                      See details <ArrowRight size={14} />
-                    </Link>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+            {/* Large card 1 - spans 7 cols */}
+            <div className="md:col-span-7">
+              <div className="relative rounded-xl overflow-hidden h-[360px] md:h-[480px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg">
+                <Image
+                  src={services[0].img}
+                  alt={services[0].imgAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.93)] via-[rgba(32,44,56,0.35)] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-7">
+                  <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-2">
+                    01
+                  </span>
+                  <h3
+                    className="text-white text-2xl font-extrabold mb-2"
+                    style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+                  >
+                    {services[0].label}
+                  </h3>
+                  <p className="text-white/75 text-sm leading-relaxed mb-4">
+                    {services[0].desc}
+                  </p>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-white font-semibold text-sm transition-colors"
+                  >
+                    See details <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             </div>
 
             {/* Right column: large + two small stacked */}
-            <div className="cbd-stagger-item md:col-span-5 flex flex-col gap-5">
+            <div className="md:col-span-5 flex flex-col gap-5">
               {/* Large card 2 */}
-              <div className="cbd-service-card flex-1 min-h-[240px] md:min-h-[280px] relative group">
-                <div className="relative w-full h-full min-h-[240px] md:min-h-[280px]">
-                  <Image
-                    src={services[1].img}
-                    alt={services[1].imgAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 42vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(29,58,40,0.92)] via-[rgba(29,58,40,0.3)] to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1.5">
-                      02
-                    </span>
-                    <h3
-                      className="text-white text-xl font-extrabold mb-1"
-                      style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
-                    >
-                      {services[1].label}
-                    </h3>
-                    <p className="text-white/70 text-xs leading-relaxed">
-                      {services[1].desc}
-                    </p>
-                  </div>
+              <div className="relative rounded-xl overflow-hidden h-[240px] md:h-[280px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg">
+                <Image
+                  src={services[1].img}
+                  alt={services[1].imgAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.93)] via-[rgba(32,44,56,0.3)] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1.5">
+                    02
+                  </span>
+                  <h3
+                    className="text-white text-xl font-extrabold mb-1"
+                    style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+                  >
+                    {services[1].label}
+                  </h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    {services[1].desc}
+                  </p>
                 </div>
               </div>
 
@@ -162,31 +158,29 @@ export default function HomePage() {
                 {services.slice(2).map((svc, i) => (
                   <div
                     key={svc.id}
-                    className="cbd-service-card min-h-[180px] relative group"
+                    className="relative rounded-xl overflow-hidden h-[180px] group cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-lg"
                   >
-                    <div className="relative w-full h-full min-h-[180px]">
-                      <Image
-                        src={svc.img}
-                        alt={svc.imgAlt}
-                        fill
-                        sizes="21vw"
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(29,58,40,0.95)] via-[rgba(29,58,40,0.5)] to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1">
-                          0{i + 3}
-                        </span>
-                        <h3
-                          className="text-white text-sm font-extrabold leading-tight mb-1"
-                          style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
-                        >
-                          {svc.label}
-                        </h3>
-                        <p className="text-white/60 text-xs leading-snug hidden sm:block">
-                          {svc.desc}
-                        </p>
-                      </div>
+                    <Image
+                      src={svc.img}
+                      alt={svc.imgAlt}
+                      fill
+                      sizes="21vw"
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(32,44,56,0.95)] via-[rgba(32,44,56,0.5)] to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <span className="inline-block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-1">
+                        0{i + 3}
+                      </span>
+                      <h3
+                        className="text-white text-sm font-extrabold leading-tight mb-1"
+                        style={{ fontFamily: "var(--font-heading)", fontWeight: 800 }}
+                      >
+                        {svc.label}
+                      </h3>
+                      <p className="text-white/60 text-xs leading-snug hidden sm:block">
+                        {svc.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -194,7 +188,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-10 cbd-reveal">
+          <div className="mt-10">
             <Link href="/services" className="cbd-btn-primary">
               View All Services
               <ArrowRight size={16} />
@@ -207,7 +201,7 @@ export default function HomePage() {
       <section className="py-24 bg-[var(--color-primary)]">
         <div className="container">
           {/* Stats row */}
-          <div className="cbd-stagger-group grid grid-cols-1 sm:grid-cols-3 gap-0 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 mb-20">
             {[
               {
                 stat: "100",
@@ -231,25 +225,16 @@ export default function HomePage() {
               <div
                 key={i}
                 className={[
-                  "cbd-stagger-item text-center py-10 px-6",
+                  "text-center py-10 px-6",
                   i < 2
                     ? "border-b sm:border-b-0 sm:border-r border-white/10"
                     : "",
                 ].join(" ")}
               >
                 <div className="stat-number mb-2">
-                  {item.stat === "Free" ? (
-                    <span>{item.stat}</span>
-                  ) : (
-                    <>
-                      <span
-                        className="cbd-count-stat"
-                        data-target={item.stat}
-                        data-suffix={item.suffix}
-                      >
-                        0
-                      </span>
-                    </>
+                  {item.stat}
+                  {item.suffix && (
+                    <span className="text-2xl">{item.suffix}</span>
                   )}
                 </div>
                 <p
@@ -265,7 +250,7 @@ export default function HomePage() {
 
           {/* Why points */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
-            <div className="cbd-reveal">
+            <div>
               <span className="section-label-light">Why Choose Us</span>
               <h2
                 className="text-[var(--color-text-on-dark)] mt-2 mb-6"
@@ -303,9 +288,9 @@ export default function HomePage() {
             </div>
 
             {/* Testimonials */}
-            <div className="flex flex-col gap-5 cbd-stagger-group">
+            <div className="flex flex-col gap-5">
               {testimonials.map((t) => (
-                <div key={t.name} className="testimonial-card cbd-stagger-item">
+                <div key={t.name} className="testimonial-card">
                   <div className="flex gap-1 mb-3">
                     {Array.from({ length: t.stars }).map((_, i) => (
                       <Star
@@ -341,7 +326,7 @@ export default function HomePage() {
 
       {/* === CTA BAND === */}
       <section className="cbd-cta-band py-20">
-        <div className="container text-center cbd-reveal">
+        <div className="container text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-white/60 mb-4">
             Ready to Get Started?
           </span>
@@ -357,8 +342,7 @@ export default function HomePage() {
             We&apos;ll come to you.
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            We&apos;ll come to you, assess the job, and give you a clear quote.
-            No surprises, no pressure.
+            We&apos;ll assess the job and give you a clear quote. No surprises, no pressure.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

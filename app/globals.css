@@ -99,9 +99,9 @@ body {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(29, 58, 40, 0.88) 0%,
-    rgba(29, 58, 40, 0.72) 60%,
-    rgba(29, 58, 40, 0.55) 100%
+    rgba(32, 44, 56, 0.88) 0%,
+    rgba(32, 44, 56, 0.72) 60%,
+    rgba(32, 44, 56, 0.55) 100%
   );
   z-index: 1;
 }
@@ -125,7 +125,7 @@ body {
 .cbd-service-card:hover {
   border-color: var(--color-primary);
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(29, 58, 40, 0.15);
+  box-shadow: 0 16px 48px rgba(32, 44, 56, 0.15);
 }
 
 /* ===== CTA BAND ===== */
@@ -299,6 +299,6 @@ body {
   left: 0;
   right: 0;
   padding: 1.5rem;
-  background: linear-gradient(to top, rgba(29, 58, 40, 0.95) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(32, 44, 56, 0.95) 0%, transparent 100%);
   color: #fff;
 }
