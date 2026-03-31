@@ -17,7 +17,7 @@ const services = [
     number: "02",
     label: "Insulation",
     desc: "Ceiling, underfloor and wall insulation to keep your home warmer in winter and cooler in summer.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1753363562638-398f75158ea9?auto=format&fit=crop&w=600&q=80",
     imgAlt: "Insulation installation in a ceiling cavity",
   },
   {
@@ -52,7 +52,7 @@ const galleryImages = [
     alt: "Tradesperson applying plaster on a wall repair job",
   },
   {
-    src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1753363562638-398f75158ea9?auto=format&fit=crop&w=800&q=80",
     alt: "Insulation being installed in ceiling cavity",
   },
   {

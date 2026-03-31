@@ -31,7 +31,7 @@ const services = [
     description:
       "Many older Manawatu homes are under-insulated or have insulation that has settled, shifted or degraded over the years. We assess what your home needs and install the right product for your situation - whether that's ceiling batts, underfloor insulation or wall infill.",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=960&q=80",
+      "https://images.unsplash.com/photo-1753363562638-398f75158ea9?auto=format&fit=crop&w=960&q=80",
     imageAlt: "Insulation installation in a ceiling cavity",
     includes: [
       "Ceiling insulation - loose fill and batts",
